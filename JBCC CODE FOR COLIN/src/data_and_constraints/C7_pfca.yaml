@@ -1,0 +1,25 @@
+## Fixed parameters
+#hydrodynamic
+k_soil : 0.3 # [1/yr] recharge = 0.6 m/year (Massey, Carlson, and LeBlanc 2006 https://doi.org/10.3133/sir20065054), depth = 17 meters, fractional volume of water = 0.125... t_characteristic = (17 * 0.125)/0.6 = 3.3 years
+k_gw : 1 # [1/yr] groundwater timescale; Darcy velocity = 150 m/yr Garabedian 10.1029/91WR00242, fire training area legth ~150 m
+#chemical
+c_prec : 0 # [mM] PFOA precursor concentration in AFFF
+c_pfsa : 0.6 # [mM] PFOA concentration in AFFF; Table S7 Ruyle et al. 2021 10.1021/acs.estlett.0c00798
+
+## Parameters with priors
+#use history (5 - 30 gallons per training (https://www.deq.state.or.us/Webdocs/Controls/Output/PdfHandler.ashx?p=4079b1d7-f8b6-4343-b701-e739287b8357.pdf&s=Preliminary%20Assessment%20Aqueous%20Film-Forming%20Foam%20Use%20PDX%2020170803.pdf)
+#equivalent to 18.9-113.6 liters per training
+V_training : [75.6, 2726.4] # [lower bound, upper bound] for uniform distribution; units = liters (quarterly to bimonthly, according to Denis)
+V_fire :  [18.9, 454.4] # [lower bound, upper bound] for uniform distribution; units = liters (equivalent to 1 to 4 training volumes)
+
+#biodegradation
+
+#sorption
+R_soil_pfsa : [1.1, 1100] # [lower bound, upper bound] for uniform distribution; lower bound = saturated R lower bound, upper bound = Guo et al. 2020 10.1029/2019WR026667
+R_gw_pfsa : [1.1, 2.6] # [min, max] for uniform distribution, for upper bound mean ± 2*sigma from column data, for lower bound minimum reported in Weber [min = 1.11, max = 2.26]
+
+#constraints
+gw_year : [2007, 2014, 2014, 2014, 2015, 2015, 2015, 2019, 2020, 2020, 2020, 2021]
+gw_pfsa_reservoir : [1521, 250, 208, 467, 732, 758, 1016, 2386, 2438, 4253, 2003, 71] # [mmol] groundwater PFOA reservoir
+soil_year : [2018]
+soil_pfsa_reservoir : [8369] # [mmol] soil PFOA reservoir
