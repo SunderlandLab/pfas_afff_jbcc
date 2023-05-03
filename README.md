@@ -3,8 +3,8 @@
 Code associated with the article:
 
 Bridger J Ruyle, Colin P Thackray, Craig M Butt, Denis R LeBlanc, Andrea K Tomranov, Chad D Vecitis, Elsie M Sunderland.
- _Centurial Persistence of Forever Chemicals at Military Fire Training Sites Without Remediation._
- **(In Progress)**
+ _Centurial Persistence of Forever Chemicals at Military Fire Training Sites Without Remediation._ **Environmental Science & Technology
+  (10.1021/acs.est.3c00675)**
 
 # Contents
 
